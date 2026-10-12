@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string a, b; 
+    cin >> a >> b;
+    
+    if (a.size() - b.size() != 1) {
+        cout << "Wah, tidak bisa :(" << endl;
+        return 0;
+    }
+    
+    int i = 0, j = 0;
+    int beda = 0;
+    
+    while (i < a.size() && j < b.size()) {
+        if (a[i] == b[j]) {
+            i++;
+            j++;
+        } else {
+            beda++;
+            i++; 
+        }
+    }
+    
+    if (i < a.size()) {
+        beda++;
+    }
+    
+    if (beda == 1) {
+        cout << "Tentu saja bisa!" << endl;
+    } else {
+        cout << "Wah, tidak bisa :(" << endl;
+    }
+    
+    return 0;
+}
